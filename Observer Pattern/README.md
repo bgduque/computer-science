@@ -33,3 +33,5 @@ Lab Assignment 6 Observer pattern
 - Problem statement (description of the problem. Just copy what is stated here.
 - UML Class Diagram
 - Uploaded java codes for the solution.
+
+![uml](./ec23jj481205sjafjhjh15552512315.svg)
