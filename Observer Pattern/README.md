@@ -1,3 +1,4 @@
+### NOTE: Reference to this [link](https://www.baeldung.com/java-25-features) as this code was written in newest JDK Version 25. So the syntaxing may be different from the one you are using.
 Lab Assignment 6 Observer pattern
 ---
 **Real-time News Subscription Service**
