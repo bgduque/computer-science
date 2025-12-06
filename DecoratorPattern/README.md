@@ -59,7 +59,9 @@ public class Cimb {
 ```
 
 You should display the following output:
+
 ![alt text](./TLS2.png)
+
 Description of the following methods
 1. **showAccountType()** - Either returns "Savings Account", "GSave" or "UpSave"
 2. **getInterestRate()** - Either returns 1% for Savings Account; 2.5% for GSave; 4.0% UpSave
