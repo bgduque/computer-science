@@ -10,4 +10,4 @@ Your challenge is to apply a design pattern that provides a flexible and scalabl
 
 UML Class Diagram:
 
-![commandPattern](https://github.com/user-attachments/assets/631c4f31-cea3-47a9-b379-232bc8af846b)
+![commandPattern](./Visual.svg)
