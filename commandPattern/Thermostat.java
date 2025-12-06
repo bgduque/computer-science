@@ -1,40 +1,26 @@
 package commandPattern;
 
-public class Thermostat {
-    private Boolean isThermostatSwitchedOn = false;
-    private int temperature = 22;
-
-    public int getTemperature(){
-        return temperature;
+record Thermostat(String name, double[] temp) implements Device {
+    Thermostat(String name) {
+        this(name, new double[] { 20.0 });
     }
 
-    public void setTemperature(){
-        this.temperature = temperature;
-    }
-    
-    public void switchOn() {
-        System.out.println("Thermostat is successfully switched on!\n");
-        isThermostatSwitchedOn = true;
+    public String status() {
+        return "%s: %.1f C".formatted(name, temp[0]);
     }
 
-    public void switchOff(){
-        System.out.println("Thermostat are successfully switched off!\n");
-        isThermostatSwitchedOn = false;
-    }
+    record SetTemp(Thermostat t, double target, double[] prev) implements Command {
+        SetTemp(Thermostat t, double target) {
+            this(t, target, new double[] { t.temp[0] });
+        }
 
-    public boolean checkThermostatState(){
-        return isThermostatSwitchedOn;
-    }
+        public void execute() {
+            prev[0] = t.temp[0];
+            t.temp[0] = target;
+        }
 
-    public void increaseTemperature(){
-        System.out.println("Increase Temperature?(y/n): ");
-        temperature++;
-        System.out.println("Temperature is now set at: " + temperature);
-    }
-
-    public void decreaseTemperature(){
-        System.out.println("Increase Temperature?(y/n): ");
-        temperature--;
-        System.out.println("Temperature is now set at: " + temperature);
+        public void undo() {
+            t.temp[0] = prev[0];
+        }
     }
 }
